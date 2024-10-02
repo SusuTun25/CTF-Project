@@ -1,14 +1,8 @@
 import React from "react";
 import { Table, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const ChallengesTable = ({ challenges, categoryPath }) => {
-  const navigate = useNavigate();
-
-  const handleStartChallenge = (challengeId) => {
-    navigate(`${categoryPath}/challenge/${challengeId}`);
-  };
-
+const ChallengesTable = ({ challenges }) => {
   return (
     <Table bordered hover>
       <thead>
@@ -28,13 +22,11 @@ const ChallengesTable = ({ challenges, categoryPath }) => {
             <td>{challenge.points}</td>
             <td>{challenge.completed ? "Yes" : "No"}</td>
             <td>
-              <Button
-                variant="primary"
-                size="sm"
-                onClick={() => handleStartChallenge(challenge.id)}
-              >
-                Start Challenge
-              </Button>
+              <Link to={challenge.path}>
+                <Button variant="primary" size="sm">
+                  Start Challenge
+                </Button>
+              </Link>
             </td>
           </tr>
         ))}

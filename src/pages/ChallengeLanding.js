@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { Link } from 'react-router-dom';
 
@@ -13,7 +13,18 @@ const categories = [
 
 const ChallengeLanding = () => {
   return (
-    <Container className="py-5" fluid style={{ minHeight: "100vh" }}>
+    <Container className="py-5 position-relative" fluid style={{ minHeight: "100vh" }}>
+      {/* Static Score Display */}
+      <Card 
+        className="position-absolute top-0 end-0 m-3" 
+        style={{ width: '120px', zIndex: 1000 }}
+      >
+        <Card.Body className="text-center">
+          <Card.Title>Score</Card.Title>
+          <Card.Text className="h3">1000</Card.Text>
+        </Card.Body>
+      </Card>
+
       <Row className="justify-content-center">
         <Col xs={12} md={8} lg={6}>
           <h1 className="text-center mb-5">Progress So Far</h1>
@@ -39,7 +50,6 @@ const ChallengeLanding = () => {
               />
             </div>
           ))}
-         
         </Col>
       </Row>
       <style>
