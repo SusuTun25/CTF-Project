@@ -4,7 +4,7 @@ import ChallengesTable from "../components/ChallengesTable";
 
 const CryptographyChallenges = () => {
   const challenges = [
-    { id: 1, name: "Caesar Cipher", difficulty: "Easy", points: 50, completed: false, path:"/cryptography/challenges/1" },
+    { id: 1, name: "Caesar Cipher", difficulty: "Easy", points: 50, completed: false },
     { id: 2, name: "Vigenère Cipher", difficulty: "Medium", points: 150, completed: false },
     { id: 3, name: "RSA Encryption", difficulty: "Hard", points: 250, completed: false },
   ];
