@@ -3,12 +3,14 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import WebExploitation from "./pages/WebExploitation";
+import WebExploitationChallenges from "./pages/WebExploitationChallenges";
+import WebExploitationChallenge1 from "./pages/web-exploitation/WebExploitation1";
 import Cryptography from "./pages/Cryptography";
+import CryptographyChallenges1 from  "./pages/Cryptography/CryptographyChallenge1";
 import NetworkSecurity from "./pages/NetworkSecurity";
 import ReverseEngineering from "./pages/ReverseEngineering";
 import BinaryExploitation from "./pages/BinaryExploitation";
 import ChallengeLanding from "./pages/ChallengeLanding";
-import WebExploitationChallenges from "./pages/WebExploitationChallenges";
 import ReverseEngineeringChallenges from "./pages/ReverseEngineeringChallenges";
 import NetworkSecurityChallenges from "./pages/NetworkSecurityChallenges";
 import BinaryExploitationChallenges from "./pages/BinaryExploitationChallenges";
@@ -31,6 +33,18 @@ const App = () => {
           path="/web-exploitation/challenges"
           element={<WebExploitationChallenges />}
         />
+        <Route
+          path="/web-exploitation/challenges/1"
+          element={<WebExploitationChallenge1 />}
+        />
+        <Route
+          path="/web-exploitation/challenges/2"
+          element={<WebExploitationChallenge1 />}
+        />
+        <Route
+          path="/web-exploitation/challenges/3"
+          element={<WebExploitationChallenge1 />}
+        />
         <Route path="/reverse-engineering" element={<ReverseEngineering />} />
         <Route
           path="/reverse-engineering/challenges"
@@ -40,6 +54,18 @@ const App = () => {
         <Route
           path="/cryptography/challenges"
           element={<CryptographyChallenges />}
+        />
+         <Route
+          path="/cryptography/challenges/1"
+          element={<CryptographyChallenges1 />}
+        />
+        <Route
+          path="/cryptography/challenges/2"
+          element={<CryptographyChallenges1 />}
+        />
+        <Route
+          path="/cryptography/challenges/3"
+          element={<CryptographyChallenges1 />}
         />
         <Route path="/network-security" element={<NetworkSecurity />} />
         <Route
