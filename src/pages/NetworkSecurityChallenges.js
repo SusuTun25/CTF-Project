@@ -1,20 +1,30 @@
 import React from "react";
 import CategorySubPage from "../components/CategorySubPage";
 import ChallengesTable from "../components/ChallengesTable";
+import challengeData from "../challengeData";
 
 const NetworkSecurityChallenges = () => {
-  const challenges = [
-    { id: 1, name: "Packet Analysis", difficulty: "Easy", points: 75, completed: false },
-    { id: 2, name: "Firewall Configuration", difficulty: "Medium", points: 175, completed: false },
-    { id: 3, name: "VPN Setup", difficulty: "Hard", points: 275, completed: false },
-  ];
+ 
+  const networkSecurityChallenges = challengeData.networkSecurity || [];
 
-  const challengesContent = (
-    <ChallengesTable 
-      challenges={challenges} 
+  const challenges = networkSecurityChallenges.map(challenge => ({
+    id: challenge.id,
+    name: challenge.title,
+    difficulty: challenge.difficulty || "N/A",
+    points: challenge.points || 100,
+    completed: false,
+    path: `/network-security/challenges/${challenge.id}`
+  }))
+
+  const challengesContent = challenges.length > 0 ? (
+    <ChallengesTable
+      challenges={challenges}
       categoryPath="/network-security"
     />
+  ) : (
+    <p>No challenges available at the moment.</p>
   );
+
 
   return (
     <CategorySubPage

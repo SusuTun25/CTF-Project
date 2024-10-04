@@ -1,13 +1,20 @@
 import React from "react";
 import CategorySubPage from "../components/CategorySubPage";
 import ChallengesTable from "../components/ChallengesTable";
+import challengeData from "../challengeData";
 
 const ReverseEngineeringChallenges = () => {
-  const challenges = [
-    { id: 1, name: "Basic Assembly", difficulty: "Easy", points: 125, completed: false },
-    { id: 2, name: "Malware Analysis", difficulty: "Medium", points: 225, completed: false },
-    { id: 3, name: "Obfuscated Code", difficulty: "Hard", points: 325, completed: false },
-  ];
+
+
+  const reverseEngineeringChallenges = challengeData.reverseEngineering || []
+  const challenges = reverseEngineeringChallenges.map(challenge => ({
+    id: challenge.id,
+    name: challenge.title,
+    difficulty: challenge.difficulty || "N/A",
+    points: challenge.points || 100,
+    completed: false,
+    path: `/reverse-engineering/challenges/${challenge.id}`
+  }))
 
   const challengesContent = (
     <ChallengesTable 

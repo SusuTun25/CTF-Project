@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Container, Card, Form, Button, Modal } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const ChallengePage = ({ challenge }) => {
   const [showHintModal, setShowHintModal] = useState(false);
   const [showHint, setShowHint] = useState(false);
   const [flagInput, setFlagInput] = useState('');
+  const navigate = useNavigate();
 
   if (!challenge) {
     return <div>Challenge not found</div>;
@@ -23,6 +25,10 @@ const ChallengePage = ({ challenge }) => {
     e.preventDefault();
     console.log('Submitted flag:', flagInput);
   };
+
+  const goToChallengeSubPage = (e) => {
+    navigate(`${window.location.pathname}/view`);
+  }
 
   return (
     <Container className="py-5">
@@ -51,6 +57,10 @@ const ChallengePage = ({ challenge }) => {
           </Form>
         </Card.Body>
       </Card>
+
+      <Button variant="secondary" className='me-2 btn-success' onClick={goToChallengeSubPage}>
+        Launch Challenge Interface Here
+      </Button>
 
       <Button variant="secondary" onClick={handleHintRequest}>
         Get Hint

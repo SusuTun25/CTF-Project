@@ -13,8 +13,10 @@ import ReverseEngineeringChallenges from "./pages/ReverseEngineeringChallenges";
 import NetworkSecurityChallenges from "./pages/NetworkSecurityChallenges";
 import BinaryExploitationChallenges from "./pages/BinaryExploitationChallenges";
 import CryptographyChallenges from "./pages/CryptographyChallenges";
-import ChallengePage from "./components/ChallengePage"; // Assume you've created this component
+import ChallengePage from "./components/ChallengePage";
 import challengeData from "./challengeData";
+import ChallengeInterface from "./components/ChallengeInterface";
+
 // Helper function to convert camelCase to kebab-case
 const camelToKebabCase = (string) => {
   return string.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, "$1-$2").toLowerCase();
@@ -56,11 +58,16 @@ const App = () => {
         {/* Dynamic routes for individual challenges */}
         {Object.entries(challengeData).map(([category, challenges]) =>
           challenges.map((challenge) => (
-            <Route
-              key={challenge.id}
-              path={`/${camelToKebabCase(category)}/challenges/${challenge.id}`}
-              element={<ChallengePage challenge={challenge} />}
-            />
+            <React.Fragment key={challenge.id}>
+              <Route
+                path={`/${camelToKebabCase(category)}/challenges/${challenge.id}`}
+                element={<ChallengePage challenge={challenge} />}
+              />
+              <Route
+                path={`/${camelToKebabCase(category)}/challenges/${challenge.id}/view`}
+                element={<ChallengeInterface challenge={challenge} />}
+              />
+            </React.Fragment>
           ))
         )}
       </Routes>
