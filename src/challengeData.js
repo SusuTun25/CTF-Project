@@ -2,34 +2,28 @@ const challengeData = {
     "webExploitation": [
       {
         "id": "web1",
-        "title": "SQL Injection 101",
+        "title": "Log Me In",
         "description": "Can you exploit this simple login form to gain unauthorized access?",
         "hint": "Try inputting special characters in the username field.",
-        "flag": "CTF{sql_injection_mastered}"
+        "flag": "CTF{sql_injection_mastered}",
+        "component": 'WebExploitationChallenge1',
+        "difficulty": "Easy",
+        "points":100
+
       },
-      {
-        "id": "web2",
-        "title": "XSS Adventure",
-        "description": "Inject a script to alert() the cookie on this page.",
-        "hint": "Look for user input that's reflected on the page without proper sanitization.",
-        "flag": "CTF{xss_master}"
-      }
+     
     ],
     "cryptography": [
       {
         "id": "crypto1",
-        "title": "Caesar's Secret",
+        "title": "Khoor's Secret",
         "description": "Decrypt this message that was encrypted using a Caesar cipher.",
         "hint": "The shift used is equal to the atomic number of Carbon.",
-        "flag": "CTF{hail_caesar}"
+        "flag": "CTF{hail_caesar}",
+        "difficulty": "Easy",
+        "points":100
       },
-      {
-        "id": "crypto2",
-        "title": "RSA Rookie",
-        "description": "Break this simple RSA encryption with small prime factors.",
-        "hint": "The primes used are both less than 100.",
-        "flag": "CTF{small_primes_big_problem}"
-      }
+     
     ],
     "networkSecurity": [
       {

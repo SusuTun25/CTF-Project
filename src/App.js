@@ -15,12 +15,18 @@ import BinaryExploitationChallenges from "./pages/BinaryExploitationChallenges";
 import CryptographyChallenges from "./pages/CryptographyChallenges";
 import ChallengePage from "./components/ChallengePage";
 import challengeData from "./challengeData";
-import ChallengeInterface from "./components/ChallengeInterface";
-
+import WebExploitationChallenge1 from "./challenges/WebExploitationChallenge1";
+import CryptographyChallenge1 from "./challenges/CryptographyChallenge1";
 // Helper function to convert camelCase to kebab-case
 const camelToKebabCase = (string) => {
   return string.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, "$1-$2").toLowerCase();
 };
+
+const challengeComponents = {
+  'web1': WebExploitationChallenge1,
+  'crypto1' : CryptographyChallenge1
+};
+
 
 const App = () => {
   return (
@@ -63,13 +69,31 @@ const App = () => {
                 path={`/${camelToKebabCase(category)}/challenges/${challenge.id}`}
                 element={<ChallengePage challenge={challenge} />}
               />
-              <Route
-                path={`/${camelToKebabCase(category)}/challenges/${challenge.id}/view`}
-                element={<ChallengeInterface challenge={challenge} />}
-              />
             </React.Fragment>
           ))
         )}
+
+      
+        {Object.entries(challengeData).map(([category, challenges]) =>
+          challenges.map((challenge) => {
+            const ChallengeComponent = challengeComponents[challenge.id];
+
+            // Check if the component exists
+            if (!ChallengeComponent) {
+              console.error(`No component found for challenge ID: ${challenge.id}`);
+              return null; // Skip this route if no component is found
+            }
+
+            return (
+              <Route
+                key={challenge.id}
+                path={`/${camelToKebabCase(category)}/challenges/${challenge.id}/view`}
+                element={<ChallengeComponent />}
+              />
+            );
+          })
+        )}
+
       </Routes>
     </Router>
   );
