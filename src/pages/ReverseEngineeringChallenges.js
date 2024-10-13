@@ -16,11 +16,13 @@ const ReverseEngineeringChallenges = () => {
     path: `/reverse-engineering/challenges/${challenge.id}`
   }))
 
-  const challengesContent = (
+  const challengesContent = challenges.length > 0 ? (
     <ChallengesTable 
       challenges={challenges} 
       categoryPath="/reverse-engineering"
     />
+  ) : (
+    <p>No challenges available at the moment.</p>
   );
 
   return (

@@ -4,12 +4,11 @@ const challengeData = {
         "id": "web1",
         "title": "Log Me In",
         "description": "Can you exploit this simple login form to gain unauthorized access?",
-        "hint": "Try inputting special characters in the username field.",
+        "hint": "Try looking at the source.",
         "flag": "CTF{sql_injection_mastered}",
         "component": 'WebExploitationChallenge1',
         "difficulty": "Easy",
         "points":100
-
       },
      
     ],
@@ -38,18 +37,22 @@ const challengeData = {
       {
         "id": "rev1",
         "title": "Assembly Basics",
-        "description": "Reverse engineer this simple x86 assembly code to find the flag.",
-        "hint": "Pay attention to the comparison before the jump instruction.",
-        "flag": "CTF{asm_master}"
+        "description": "We have encrypted a secret message and hidden it in an encoded string. Your task is to reverse-engineer the encoding to discover the flag.",
+        "hint": "The flag is in the format `FLAG{message}`, and the encoding is a common reversible technique. Start by decoding the base64 string and look for clues!",
+        "flag": "CTF{hail_caesar}",
+        "difficulty": "Easy",
+        "points":100
       }
     ],
     "binaryExploitation": [
       {
         "id": "bin1",
         "title": "Buffer Overflow 101",
-        "description": "Exploit this program's buffer to gain a shell.",
-        "hint": "The buffer is 64 bytes long. What happens if you write more?",
-        "flag": "CTF{stack_smashed}"
+        "description": "We have encrypted a secret message and hidden it in an encoded string. Your task is to reverse-engineer the encoding to discover the flag.",
+        "hint": "The flag is in the format `FLAG{message}`, and the encoding is a common reversible technique. Start by decoding the base64 string and look for clues!",
+        "flag": "CTF{hail_caesar}",
+        "difficulty": "Easy",
+        "points":100
       }
     ]
   };
