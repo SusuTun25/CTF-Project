@@ -18,7 +18,7 @@ const networkSecurityChallenge1 = () => {
                         We intercepted suspicious network traffic from a server suspected of leaking sensitive data. Analyze the provided network capture file and find the secret message hidden in the communication.
                     </Card.Text>
 
-                    <div className="d-grid">
+                    <div className="d-flex justify-content-center">
                         <a href="../../Resources/capture.pcap" download="network_capture.pcap">
                             <Button variant="primary" type="submit">
                                 download
