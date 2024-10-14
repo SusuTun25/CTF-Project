@@ -18,7 +18,7 @@ const challengeData = {
         "title": "Khoor's Secret",
         "description": "Decrypt this message that was encrypted using a Caesar cipher.",
         "hint": "The shift used is equal to the atomic number of Carbon.",
-        "flag": "CTF{hail_caesar}",
+        "flag": "FLAG{CaesarCipher}",
         "difficulty": "Easy",
         "points":100
       },
@@ -30,7 +30,7 @@ const challengeData = {
         "title": "Intercept the Secret",
         "description": "Analyze this pcap file to find the hidden flag.",
         "hint": "Look for unencrypted HTTP traffic.",
-        "flag": "CTF{wireshark_pro}",
+        "flag": "FLAG{NetworkTrafficSniffer}",
         "difficulty": "Easy",
         "points":100
       }
@@ -41,7 +41,7 @@ const challengeData = {
         "title": "Assembly Basics",
         "description": "We have encrypted a secret message and hidden it in an encoded string. Your task is to reverse-engineer the encoding to discover the flag.",
         "hint": "The flag is in the format `FLAG{message}`, and the encoding is a common reversible technique. Start by decoding the base64 string and look for clues!",
-        "flag": "CTF{hail_caesar}",
+        "flag": "FLAG{ReverseCTFChallenge}",
         "difficulty": "Easy",
         "points":100
       }
@@ -50,9 +50,9 @@ const challengeData = {
       {
         "id": "bin1",
         "title": "Buffer Overflow 101",
-        "description": "We have encrypted a secret message and hidden it in an encoded string. Your task is to reverse-engineer the encoding to discover the flag.",
+        "description": "You’ve discovered a vulnerable program that seems to lack proper input validation.",
         "hint": "The flag is in the format `FLAG{message}`, and the encoding is a common reversible technique. Start by decoding the base64 string and look for clues!",
-        "flag": "CTF{hail_caesar}",
+        "flag": "FLAG{BufferOverflowMaster}",
         "difficulty": "Easy",
         "points":100
       }
