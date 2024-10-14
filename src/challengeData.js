@@ -27,10 +27,12 @@ const challengeData = {
     "networkSecurity": [
       {
         "id": "net1",
-        "title": "Packet Sniffing 101",
+        "title": "Intercept the Secret",
         "description": "Analyze this pcap file to find the hidden flag.",
         "hint": "Look for unencrypted HTTP traffic.",
-        "flag": "CTF{wireshark_pro}"
+        "flag": "CTF{wireshark_pro}",
+        "difficulty": "Easy",
+        "points":100
       }
     ],
     "reverseEngineering": [
