@@ -1,13 +1,14 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import { TypeAnimation } from 'react-type-animation';
+import ScoreCard from '../components/ScoreCard';
 const categories = [
+  { name: "Network Infiltration", path: "/network-security", icon: "fas fa-network-wired" },
+  { name: "Crypto Breaker", path: "/cryptography", icon: "fas fa-lock" },
   { name: "Web Exploitation", path: "/web-exploitation", icon: "fas fa-globe" },
-  { name: "Cryptography", path: "/cryptography", icon: "fas fa-lock" },
-  { name: "Network Security", path: "/network-security", icon: "fas fa-network-wired" },
-  { name: "Reverse Engineering", path: "/reverse-engineering", icon: "fas fa-code" },
-  { name: "Binary Exploitation", path: "/binary-exploitation", icon: "fas fa-bug" },
+  { name: "Code Decipherer", path: "/reverse-engineering", icon: "fas fa-code" },
+  { name: "System Hacker", path: "/binary-exploitation", icon: "fas fa-bug" },
 ];
 
 const ChallengeLanding = () => {
@@ -15,15 +16,29 @@ const ChallengeLanding = () => {
     <Container className="py-5 position-relative" fluid style={{ minHeight: "100vh" }}>
       <Row className="justify-content-center">
         <Col xs={12} md={10} lg={8}>
-          <h1 className="text-center mb-5">Capture the Flag Challenges</h1>
+        <ScoreCard />
+          <h1 className="text-center mb-5">Operation Phantom Purge</h1>
           
           <Card className="mb-5 shadow-sm border-light">
             <Card.Body>
-              <Card.Title className="text-center">What is Capture the Flag?</Card.Title>
-              <Card.Text>
-                Capture the Flag (CTF) is a cybersecurity competition that challenges participants to solve a variety of computer security problems. In these contests, individuals or teams engage in tasks that involve reverse engineering, hacking, decrypting, and more, all in a safe and legal environment. 
-                <br /><br />
-                Participants can hone their skills in areas such as web exploitation, cryptography, and network security, all while competing against others. CTFs not only offer practical experience but also foster a sense of community among cybersecurity enthusiasts. 
+              <Card.Text style={{ fontFamily: 'monospace' }}>
+                <TypeAnimation
+                  sequence={[
+                    `AGENT,
+
+Our organization has been compromised by "The Phantom Collective", a notorious group of cyber criminals. They've infiltrated our systems and stolen classified data, hiding it behind complex security measures.
+
+Your mission is to recover this data by completing a series of challenges. Each challenge represents a different aspect of their defense system that you must overcome.
+
+Time is of the essence. The future of our organization depends on your success.
+
+Good luck, agent. The world is counting on you.`,
+                    1000
+                  ]}
+                  wrapper="div"
+                  cursor={true}
+                  style={{ whiteSpace: 'pre-line' }}
+                />
               </Card.Text>
             </Card.Body>
           </Card>

@@ -1,41 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Card, Form, Button, Modal, Alert, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-
+import { updateTotalScore } from '../utils/scoreManager';
+import ScoreCard from './ScoreCard';
 const ChallengePage = ({ challenge }) => {
   const [showHintModal, setShowHintModal] = useState(false);
   const [showHint, setShowHint] = useState(false);
   const [flagInput, setFlagInput] = useState('');
   const [flagSubmissionResult, setFlagSubmissionResult] = useState(null);
-  const [points, setPoints] = useState(null);
+  const [isChallengeCompleted, setIsChallengeCompleted] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Initialize points and hint status when the component mounts or challenge changes
     const initializeChallenge = () => {
-      const storedPoints = localStorage.getItem(`challenge_${challenge.id}_points`);
       const storedHintUsed = localStorage.getItem(`challenge_${challenge.id}_hint_used`);
+      const storedCompleted = localStorage.getItem(`challenge_${challenge.id}_completed`);
       
-      if (storedPoints !== null) {
-        setPoints(parseInt(storedPoints, 10));
-      } else {
-        setPoints(challenge.points);
-      }
-
-      if (storedHintUsed === 'true') {
-        setShowHint(true);
-      }
+      setShowHint(storedHintUsed === 'true');
+      setIsChallengeCompleted(storedCompleted === 'true');
     };
 
     initializeChallenge();
-  }, [challenge.id, challenge.points]);
-
-  useEffect(() => {
-    // Save points to localStorage whenever it changes
-    if (points !== null) {
-      localStorage.setItem(`challenge_${challenge.id}_points`, points.toString());
-    }
-  }, [challenge.id, points]);
+  }, [challenge.id]);
 
   if (!challenge) {
     return <div>Challenge not found</div>;
@@ -48,27 +34,32 @@ const ChallengePage = ({ challenge }) => {
   const confirmHint = () => {
     setShowHint(true);
     setShowHintModal(false);
-    // Deduct 20 points for hint, allowing negative points
-    setPoints(prevPoints => prevPoints - 20);
     localStorage.setItem(`challenge_${challenge.id}_hint_used`, 'true');
   };
 
   const handleFlagSubmit = (e) => {
     e.preventDefault();
-    if (flagInput.trim() === challenge.flag) {  // Case-sensitive comparison
+    if (flagInput.trim() === challenge.flag && !isChallengeCompleted) {
+      const pointsEarned = challenge.points - (showHint ? 20 : 0);
       setFlagSubmissionResult({
         success: true,
-        message: 'Congratulations! You\'ve captured the flag!'
+        message: `Congratulations! You've captured the flag! You earned ${pointsEarned} points.`
       });
-      // Set points to challenge points minus 20 if hint was used, but don't go below 0
-      setPoints(Math.max(0, challenge.points - (showHint ? 20 : 0)));
+      setIsChallengeCompleted(true);
+      localStorage.setItem(`challenge_${challenge.id}_completed`, 'true');
+      updateTotalScore(challenge.id, pointsEarned);
+    } else if (isChallengeCompleted) {
+      setFlagSubmissionResult({
+        success: false,
+        message: 'You\'ve already completed this challenge!'
+      });
     } else {
       setFlagSubmissionResult({
         success: false,
         message: 'Incorrect flag. Try again! Remember, the flag is case-sensitive.'
       });
     }
-    setFlagInput(''); // Clear input after submission
+    setFlagInput('');
   };
 
   const goToChallengeSubPage = () => {
@@ -77,6 +68,8 @@ const ChallengePage = ({ challenge }) => {
 
   return (
     <Container className="py-5">
+            <ScoreCard />
+
       <Card className="mb-4">
         <Card.Body>
           <Card.Title>{challenge.title}</Card.Title>
@@ -85,7 +78,7 @@ const ChallengePage = ({ challenge }) => {
             <strong>Difficulty:</strong> {challenge.difficulty}
           </Card.Text>
           <Card.Text>
-            <strong>Total Points:</strong> {challenge.points}
+            <strong>Points:</strong> {challenge.points}
           </Card.Text>
         </Card.Body>
       </Card>
@@ -100,9 +93,10 @@ const ChallengePage = ({ challenge }) => {
                 placeholder="CTF{...}" 
                 value={flagInput}
                 onChange={(e) => setFlagInput(e.target.value)}
+                disabled={isChallengeCompleted}
               />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" disabled={isChallengeCompleted}>
               Submit Flag
             </Button>
           </Form>
@@ -125,16 +119,12 @@ const ChallengePage = ({ challenge }) => {
             variant="secondary" 
             onClick={handleHintRequest} 
             className="w-100" 
-            disabled={showHint}
+            disabled={showHint || isChallengeCompleted}
           >
             {showHint ? 'Hint Used' : 'Get Hint (-20 points)'}
           </Button>
         </Col>
       </Row>
-
-      <Alert variant="light" className="text-center">
-        <strong>Current Points:</strong> {points !== null ? points : 'Loading...'}
-      </Alert>
 
       {showHint && (
         <Card className="mt-3">
@@ -150,7 +140,7 @@ const ChallengePage = ({ challenge }) => {
           <Modal.Title>Confirm Hint Request</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          Are you sure you want to view the hint? This will deduct 20 points from your score, even if it results in a negative score.
+          Are you sure you want to view the hint? This will deduct 20 points from your score when you complete the challenge.
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => setShowHintModal(false)}>

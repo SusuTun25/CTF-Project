@@ -21,12 +21,12 @@ const CryptographyChallenges = () => {
       categoryPath="/cryptography"
     />
   ) : (
-    <p>No challenges available at the moment.</p>
+    <p >No challenges available at the moment.</p>
   );
 
   return (
     <CategorySubPage
-      title="Cryptography Challenges"
+      title="Crypto Breaker Mission"
       content={challengesContent}
       buttons={[
         {
