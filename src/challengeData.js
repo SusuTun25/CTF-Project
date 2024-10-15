@@ -97,7 +97,7 @@ const challengeData = {
   ],
   "reverseEngineering": [
     {
-      "id": "re1",
+      "id": "rev1",
       "title": "Hello, Phantom",
       "description": "Reverse engineer this simple program used by The Phantom Collective for recruit testing.",
       "hint": "Start by identifying the main function and work your way through the program flow.",

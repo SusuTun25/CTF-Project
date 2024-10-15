@@ -17,7 +17,7 @@ import ChallengePage from "./components/ChallengePage";
 import challengeData from "./challengeData";
 import WebExploitationChallenge1 from "./challenges/WebExploitationChallenge1";
 import CryptographyChallenge1 from "./challenges/CryptographyChallenge1";
-import ReverseEngineeringChallenge1 from "./challenges/ReverseEngineering1";
+import ReverseEngineeringChallenge1 from "./challenges/ReverseEngineeringChallenge1";
 import BinaryExploitation1 from "./challenges/BinaryExpolitation1";
 // Helper function to convert camelCase to kebab-case
 const camelToKebabCase = (string) => {

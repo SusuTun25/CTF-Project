@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Container, Row, Col, Badge, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import ScoreCard from './ScoreCard'
 
 const ChallengeInterface = ({ challenge, children }) => {
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ const ChallengeInterface = ({ challenge, children }) => {
 
   return (
     <Container className="my-5">
+      <ScoreCard />
       <Card className="shadow-sm">
         <Card.Header as="h2" className="bg-primary text-white">
           {challenge.title}
