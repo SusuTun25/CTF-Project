@@ -12,21 +12,11 @@ const challengeData = {
     },
     {
       "id": "web2",
-      "title": "Data Exfiltration Maze",
-      "description": "You're in, but the stolen data is hidden within the website's content management system. The Phantom Collective uses a custom plugin for data storage. Find a way to exploit their system and locate the hidden data.",
-      "hint": "The custom plugin might be vulnerable to SQL injection. Look for user input fields that interact with the database.",
-      "flag": "CTF{SQL_1NJ3CT10N_M4ST3R}",
-      "component": "WebExploitationChallenge2",
-      "difficulty": "Medium",
-      "points": 200
-    },
-    {
-      "id": "web3",
       "title": "The Phantom's Control Panel",
       "description": "You've found references to a secret admin control panel. This panel likely holds the keys to all the stolen data. Your task is to find and exploit vulnerabilities in their access control system to reach this panel.",
-      "hint": "The application doesn't seem to properly check authorization for all its pages. Try to find endpoints that might be accessible without proper permissions.",
+      "hint": "The application doesn't seem to properly check authorization for all its pages. Try to find what might be accessible without proper permissions.",
       "flag": "CTF{IDOR_L34DS_T0_PR1V_3SC}",
-      "component": "WebExploitationChallenge3",
+      "component": "WebExploitationChallenge2",
       "difficulty": "Hard",
       "points": 300
     }
@@ -107,7 +97,7 @@ const challengeData = {
       "points": 100
     },
     {
-      "id": "re2",
+      "id": "rev2",
       "title": "Phantom's Vault",
       "description": "The Phantom Collective's password manager has been captured. Crack it to reveal their secrets.",
       "hint": "The program uses a custom encryption algorithm. Can you figure out how it works?",
@@ -117,7 +107,7 @@ const challengeData = {
       "points": 200
     },
     {
-      "id": "re3",
+      "id": "rev3",
       "title": "Ghost in the Machine",
       "description": "This advanced malware was found in our systems. Reverse engineer it to understand its functionality and find a way to neutralize it.",
       "hint": "The malware uses advanced obfuscation techniques. Look for suspicious API calls and hidden code segments.",
