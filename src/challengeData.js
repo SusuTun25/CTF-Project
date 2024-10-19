@@ -2,21 +2,21 @@ const challengeData = {
   "webExploitation": [
     {
       "id": "web1",
-      "title": "Log Me In",
-      "description": "You've discovered the login page to The Phantom Collective's command center. Your task is to bypass their authentication system and gain initial access.",
-      "hint": "The login form might be vulnerable to a common authentication bypass technique. Try manipulating the request parameters.",
-      "flag": "CTF{BR0K3N_AUTH_BY9ASS3D}",
-      "component": "WebExploitationChallenge1",
-      "difficulty": "Easy",
-      "points": 100
-    },
-    {
-      "id": "web2",
       "title": "The Phantom's Control Panel",
       "description": "You've found references to a secret admin control panel. This panel likely holds the keys to all the stolen data. Your task is to find and exploit vulnerabilities in their access control system to reach this panel.",
       "hint": "The application doesn't seem to properly check authorization for all its pages. Try to find what might be accessible without proper permissions.",
       "flag": "CTF{IDOR_L34DS_T0_PR1V_3SC}",
       "component": "WebExploitationChallenge2",
+      "difficulty": "Easy",
+      "points": 100
+    },
+    {
+      "id": "web2",
+      "title": "The Phantom's Secure Portal",
+      "description": "The Phantom Collective has implemented a 'secure' admin portal with a custom sorting mechanism. Your task is to bypass their login system, defeat the two-step verification, and execute a payload on their server.",
+      "hint": "Sometimes, the order of operations matters more than you think. And in two-step verification, the devil is in the details.",
+      "flag": "CTF{SQLi_2FA_BYPASS_MASTER}",
+      "component": "WebExploitationChallenge3",
       "difficulty": "Hard",
       "points": 300
     }
@@ -34,19 +34,9 @@ const challengeData = {
     },
     {
       "id": "crypto2",
-      "title": "Binary Secrets",
-      "description": "The Phantom Collective uses a custom encoding scheme. Decode this message to reveal their next target.",
-      "hint": "The encoding uses binary, but with a twist. Each byte might not represent what you think it does.",
-      "flag": "CTF{B1NARY_N0T_50_51MPL3}",
-      "component": "CryptographyChallenge2",
-      "difficulty": "Medium",
-      "points": 200
-    },
-    {
-      "id": "crypto3",
       "title": "The Phantom's Signature",
-      "description": "Intercept and forge a digital signature used by The Phantom Collective to authenticate their communications.",
-      "hint": "The signature algorithm might be vulnerable to a length extension attack.",
+      "description": "Intercept and forge a digital signature used by The Phantom Collective Bank.",
+      "hint": "Look at your developer tools",
       "flag": "CTF{LENGTH_EXTENSION_PWNED}",
       "component": "CryptographyChallenge3",
       "difficulty": "Hard",
