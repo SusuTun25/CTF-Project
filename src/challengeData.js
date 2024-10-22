@@ -33,6 +33,15 @@ const challengeData = {
         "flag": "FLAG{NetworkTrafficSniffer}",
         "difficulty": "Easy",
         "points":100
+      },
+      {
+        "id": "net2",
+        "title": "Password Hunter",
+        "description": "An attacker has attempted to brute-force login credentials by sending multiple requests with a mix of irrelevant data and incorrect passwords. Among the noise, the correct password was transmitted, but it’s hidden within a series of meaningless requests.",
+        "hint": "Focus on the POST requests to find the password.",
+        "flag": "FLAG{correct_password}",
+        "difficulty": "Hard",
+        "points":200
       }
     ],
     "reverseEngineering": [
