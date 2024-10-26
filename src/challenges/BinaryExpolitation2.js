@@ -1,25 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Form, Button, Alert } from 'react-bootstrap';
 import challengeData from '../challengeData';
 import ChallengeInterface from '../components/ChallengeInterface';
-import { Card, Container, Button} from 'react-bootstrap';
+import { Card, Container} from 'react-bootstrap';
 
-const networkSecurityChallenge2 = () => {
+const BufferOverflowChallenge2 = () => {
 
-    const challenge = challengeData.networkSecurity.find(c => c.id === 'net2');
+    const challenge = challengeData.binaryExploitation.find(c => c.id === 'bin2');
 
     const challengeContent = (
         <Container className="my-5">
             <Card className="shadow">
                 <Card.Header as="h2" className="text-center bg-primary text-white">
-                    Network Security Challenge
+                    Binary Exploitation Challenge
                 </Card.Header>
                 <Card.Body>
                     <Card.Text className="text-center mb-4">
-                        We intercepted suspicious network traffic from a server suspected of leaking sensitive data. Analyze the provided network capture file and find the secret message hidden in the communication.
+                        A critical program on your target system contains a buffer overflow vulnerability that could allow an attacker to execute arbitrary code or manipulate program control flow.
                     </Card.Text>
 
                     <div className="d-flex justify-content-center">
-                        <a href="../../Resources/Message.pcap" download="message.pcap">
+                        <a href="..\..\Resources\BinaryExploitation2.7z" download="BinaryExploitation2.7z">
                             <Button variant="primary" type="submit">
                                 download
                             </Button>
@@ -27,16 +28,15 @@ const networkSecurityChallenge2 = () => {
                     </div>
                 </Card.Body>
             </Card>
-        </Container>
-    );
+        </Container>)
 
-    return challenge ? (
+  return challenge ? (
         <ChallengeInterface challenge={challenge}>
             {challengeContent}
         </ChallengeInterface>
     ) : (
         <div>Challenge not found</div>
     );
-}
+};
 
-export default networkSecurityChallenge2;
+export default BufferOverflowChallenge2;

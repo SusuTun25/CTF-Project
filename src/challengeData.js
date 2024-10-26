@@ -64,6 +64,15 @@ const challengeData = {
         "flag": "FLAG{BufferOverflowMaster}",
         "difficulty": "Easy",
         "points":100
+      },
+      {
+        "id": "bin2",
+        "title": "Stack Smash: Breaking the Barrier",
+        "description": "A critical program on your target system contains a buffer overflow vulnerability that could allow an attacker to execute arbitrary code or manipulate program control flow. Your mission is to exploit this vulnerability by crafting an input that overflows the buffer and hijacks the program’s execution to call a hidden function that reveals a secret flag.",
+        "hint": "The flag is in the format `FLAG{message}`, and the encoding is a common reversible technique. Start by decoding the base64 string and look for clues!",
+        "flag": "FLAG{BufferOverflowMaster}",
+        "difficulty": "Hard",
+        "points":200
       }
     ]
   };

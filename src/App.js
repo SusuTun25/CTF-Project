@@ -19,6 +19,7 @@ import WebExploitationChallenge1 from "./challenges/WebExploitationChallenge1";
 import CryptographyChallenge1 from "./challenges/CryptographyChallenge1";
 import ReverseEngineeringChallenge1 from "./challenges/ReverseEngineering1";
 import BinaryExploitation1 from "./challenges/BinaryExpolitation1";
+import BinaryExploitation2 from "./challenges/BinaryExpolitation2";
 import networkSecurityChallenge1 from "./challenges/Network1";
 import networkSecurityChallenge2 from "./challenges/Network2";
 // Helper function to convert camelCase to kebab-case
@@ -31,6 +32,7 @@ const challengeComponents = {
   'crypto1' : CryptographyChallenge1,
   'rev1': ReverseEngineeringChallenge1,
   'bin1': BinaryExploitation1,
+  'bin2': BinaryExploitation2,
   'net1':networkSecurityChallenge1,
   'net2':networkSecurityChallenge2
 };
