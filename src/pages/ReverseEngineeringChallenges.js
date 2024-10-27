@@ -12,7 +12,7 @@ const ReverseEngineeringChallenges = () => {
     name: challenge.title,
     difficulty: challenge.difficulty || "N/A",
     points: challenge.points || 100,
-    completed: false,
+    completed: localStorage.getItem(`challenge_${challenge.id}_completed`) === 'true',
     path: `/reverse-engineering/challenges/${challenge.id}`
   }))
 
