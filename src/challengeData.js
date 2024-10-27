@@ -46,33 +46,23 @@ const challengeData = {
   "networkSecurity": [
     {
       "id": "net1",
-      "title": "Packet Sniffing 101",
-      "description": "Analyze this captured network traffic to find The Phantom Collective's communication channel.",
-      "hint": "Look for unusual patterns in the packet headers. They might be hiding data in plain sight.",
-      "flag": "CTF{HIDDEN_IN_PLAIN_PACKETS}",
+      "title": "Intercept the Secret",
+      "description": "Analyze this pcap file to find the hidden flag.",
+      "hint": "Look for unencrypted HTTP traffic.",
+      "flag": "FLAG{NetworkTrafficSniffer}",
       "component": "NetworkSecurityChallenge1",
       "difficulty": "Easy",
-      "points": 100
+      "points":100
     },
     {
       "id": "net2",
-      "title": "Firewall Bypass",
-      "description": "The Phantom Collective's server is protected by a firewall. Find a way to bypass it and establish a connection.",
-      "hint": "The firewall might not be filtering all types of traffic equally. Some protocols might be overlooked.",
-      "flag": "CTF{FIREWALL_HOLE_FOUND}",
+      "title": "Password Hunter",
+      "description": "An attacker has attempted to brute-force login credentials by sending multiple requests with a mix of irrelevant data and incorrect passwords. Among the noise, the correct password was transmitted, but it’s hidden within a series of meaningless requests.",
+      "hint": "Focus on the POST requests to find the password.",
+      "flag": "FLAG{correct_password}",
       "component": "NetworkSecurityChallenge2",
-      "difficulty": "Medium",
-      "points": 200
-    },
-    {
-      "id": "net3",
-      "title": "Man-in-the-Middle",
-      "description": "Intercept and modify The Phantom Collective's encrypted communication to gain access to their command server.",
-      "hint": "Their encryption might be strong, but how secure is their key exchange process?",
-      "flag": "CTF{MITM_ATTACK_SUCCESSFUL}",
-      "component": "NetworkSecurityChallenge3",
       "difficulty": "Hard",
-      "points": 300
+      "points":200
     }
   ],
   "reverseEngineering": [
@@ -88,21 +78,11 @@ const challengeData = {
     },
     {
       "id": "rev2",
-      "title": "Phantom's Vault",
-      "description": "The Phantom Collective's password manager has been captured. Crack it to reveal their secrets.",
-      "hint": "The program uses a custom encryption algorithm. Can you figure out how it works?",
-      "flag": "CTF{CUSTOM_CRYPTO_BROKEN}",
-      "component": "ReverseEngineeringChallenge2",
-      "difficulty": "Medium",
-      "points": 200
-    },
-    {
-      "id": "rev3",
       "title": "Ghost in the Machine",
       "description": "This advanced malware was found in our systems. Reverse engineer it to understand its functionality and find a way to neutralize it.",
       "hint": "The malware uses advanced obfuscation techniques. Look for suspicious API calls and hidden code segments.",
       "flag": "CTF{ADVANCED_MALWARE_DISSECTED}",
-      "component": "ReverseEngineeringChallenge3",
+      "component": "ReverseEngineeringChallenge2",
       "difficulty": "Hard",
       "points": 300
     }
@@ -111,32 +91,22 @@ const challengeData = {
     {
       "id": "bin1",
       "title": "Buffer Overflow 101",
-      "description": "Exploit a simple buffer overflow vulnerability in this program to gain control of the execution flow.",
-      "hint": "Look for user input that isn't properly validated. Can you overflow a buffer to overwrite critical data?",
-      "flag": "CTF{STACK_SMASHING_SUCCESS}",
+      "description": "You’ve discovered a vulnerable program that seems to lack proper input validation.",
+      "hint": "The flag is in the format `FLAG{message}`, and the encoding is a common reversible technique. Start by decoding the base64 string and look for clues!",
+      "flag": "FLAG{BufferOverflowMaster}",
       "component": "BinaryExploitationChallenge1",
       "difficulty": "Easy",
-      "points": 100
+      "points":100
     },
     {
       "id": "bin2",
-      "title": "Return-Oriented Programming",
-      "description": "The program has stack protection enabled. Use ROP to bypass it and execute arbitrary code.",
-      "hint": "You can't inject your own code, but can you reuse existing code in the binary to achieve your goal?",
-      "flag": "CTF{ROP_CHAIN_MASTER}",
+      "title": "Stack Smash: Breaking the Barrier",
+      "description": "A critical program on your target system contains a buffer overflow vulnerability that could allow an attacker to execute arbitrary code or manipulate program control flow. Your mission is to exploit this vulnerability by crafting an input that overflows the buffer and hijacks the program’s execution to call a hidden function that reveals a secret flag.",
+      "hint": "The flag is in the format `FLAG{message}`, and the encoding is a common reversible technique. Start by decoding the base64 string and look for clues!",
+      "flag": "FLAG{BufferOverflowMaster}",
       "component": "BinaryExploitationChallenge2",
-      "difficulty": "Medium",
-      "points": 200
-    },
-    {
-      "id": "bin3",
-      "title": "Kernel Exploit",
-      "description": "You've found a vulnerability in a kernel module used by The Phantom Collective. Exploit it to gain root access to their systems.",
-      "hint": "The vulnerability is in the IOCTL handler. Can you craft a payload that will elevate your privileges?",
-      "flag": "CTF{KERNEL_PWNED_GAME_OVER}",
-      "component": "BinaryExploitationChallenge3",
       "difficulty": "Hard",
-      "points": 300
+      "points":200
     }
   ]
 };
