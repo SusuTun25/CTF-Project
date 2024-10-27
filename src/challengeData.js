@@ -55,13 +55,14 @@ const challengeData = {
     },
     {
       "id": "net2",
-      "title": "Password Hunter",
-      "description": "An attacker has attempted to brute-force login credentials by sending multiple requests with a mix of irrelevant data and incorrect passwords. Among the noise, the correct password was transmitted, but it’s hidden within a series of meaningless requests.",
-      "hint": "Focus on the POST requests to find the password.",
-      "flag": "FLAG{correct_password}",
-      "difficulty": "Hard",
-      "points":200
-    }
+      "title": "Firewall Bypass",
+      "description": "The Phantom Collective's server is protected by a firewall. Find a way to bypass it and establish a connection.",
+      "hint": "The firewall might not be filtering all types of traffic equally. Some protocols might be overlooked.",
+      "flag": "CTF{FIREWALL_HOLE_FOUND}",
+      "component": "NetworkSecurityChallenge2",
+      "difficulty": "Medium",
+      "points": 200
+    },
   ],
   "reverseEngineering": [
     {
