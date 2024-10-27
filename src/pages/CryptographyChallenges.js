@@ -1,24 +1,32 @@
 import React from "react";
 import CategorySubPage from "../components/CategorySubPage";
 import ChallengesTable from "../components/ChallengesTable";
+import challengeData from "../challengeData";
 
 const CryptographyChallenges = () => {
-  const challenges = [
-    { id: 1, name: "Caesar Cipher", difficulty: "Easy", points: 50, completed: false },
-    { id: 2, name: "Vigenère Cipher", difficulty: "Medium", points: 150, completed: false },
-    { id: 3, name: "RSA Encryption", difficulty: "Hard", points: 250, completed: false },
-  ];
+  const cryptographyChallenges = challengeData.cryptography || [];
 
-  const challengesContent = (
-    <ChallengesTable 
-      challenges={challenges} 
+  const challenges = cryptographyChallenges.map(challenge => ({
+    id: challenge.id,
+    name: challenge.title,
+    difficulty: challenge.difficulty || "N/A",
+    points: challenge.points || 100,
+    completed: false,
+    path: `/cryptography/challenges/${challenge.id}`
+  }));
+
+  const challengesContent = challenges.length > 0 ? (
+    <ChallengesTable
+      challenges={challenges}
       categoryPath="/cryptography"
     />
+  ) : (
+    <p >No challenges available at the moment.</p>
   );
 
   return (
     <CategorySubPage
-      title="Cryptography Challenges"
+      title="Crypto Breaker Mission"
       content={challengesContent}
       buttons={[
         {
@@ -30,5 +38,6 @@ const CryptographyChallenges = () => {
     />
   );
 };
+
 
 export default CryptographyChallenges;

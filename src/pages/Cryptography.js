@@ -1,15 +1,19 @@
 import React from "react";
 import CategorySubPage from "../components/CategorySubPage";
-import cryptographyImage from "../assets/image-cryptography.png"; 
+import cryptographyImage from "../assets/image-sha256.png"; 
 
 const Cryptography = () => {
   return (
     <CategorySubPage
-      title="Cryptography"
-      description="Explore the world of cryptography. From ancient ciphers to modern encryption techniques, test your skills in securing and breaking coded messages."
+      title="Crypto Breakers"
+      description="Agent, you've reached The Phantom Collective's encryption layer. 
+  They're using advanced cryptographic techniques to secure their communications and data. 
+  Your task is to break through these encryption methods, decipher their messages, and unlock access to their protected information. 
+  Each challenge represents a different encryption puzzle you must solve. 
+  Time is of the essence – crack these codes to progress further into their network. Good luck, cryptobreaker."
       imageSrc={cryptographyImage}
       buttons={[
-        { text: "Start Challenges", path: "/cryptography/challenges" },
+        { text: "Begin Decryption", path: "/cryptography/challenges" },
       ]}
     />
   );
