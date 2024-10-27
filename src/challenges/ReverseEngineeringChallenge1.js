@@ -1,6 +1,6 @@
 import challengeData from "../challengeData";
 import ChallengeInterface from "../components/ChallengeInterface";
-import { Card, Container } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 
 const ReverseEngineeringChallenge1 = () => {
