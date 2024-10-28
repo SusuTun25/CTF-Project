@@ -22,7 +22,7 @@ const CryptographyChallenge1 = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (userInput === correctDecryption) {
-            setResult('Correct! You have decrypted the message! FLAG{CaesarCipher}');
+            setResult('Correct! You have decrypted the message! ' + challenge.flag);
         } else {
             setResult('Incorrect. Try again.');
         }
