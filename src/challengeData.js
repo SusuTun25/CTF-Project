@@ -35,10 +35,10 @@ const challengeData = {
     {
       "id": "crypto2",
       "title": "The Phantom's Signature",
-      "description": "Intercept and forge a digital signature used by The Phantom Collective Bank.",
+      "description": "Intercept and forge a digital signature used by The Phantom Collective Bank. Here is your account: username: regularUser Password: password123 ",
       "hint": "Look at your developer tools",
-      "flag": "CTF{LENGTH_EXTENSION_PWNED}",
-      "component": "CryptographyChallenge3",
+      "flag": "CTF{TokenXFER}",
+      "component": "CryptographyChallenge2",
       "difficulty": "Hard",
       "points": 300
     }
