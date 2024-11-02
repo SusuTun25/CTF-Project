@@ -93,7 +93,7 @@ const challengeData = {
       "title": "Phantom of Overflow",
       "description": "A shadowy program holds a flaw in its defenses, vulnerable to those who know where to push. Unravel its weakness and let your inputs spill beyond the boundaries.",
       "hint": "What might happen if you give it more than it can hold?",
-      "flag": "FLAG{BufferOverflowMaster}",
+      "flag": "FLAG{BufferOverflowMaster2}",
       "component": "BinaryExploitationChallenge1",
       "difficulty": "Easy",
       "points":100
@@ -103,7 +103,7 @@ const challengeData = {
       "title": "Shadows of Control",
       "description": "A fragile boundary separates control from chaos. A single overflow can tilt the balance, redirecting execution to paths unseen.",
       "hint": "Think about bypassing the call stack directly. ROP chains can give you power over execution by stitching together fragments of code already in memory. ",
-      "flag": "FLAG{BufferOverflowMaster}",
+      "flag": "FLAG{ROP_Basic_Challenge}",
       "component": "BinaryExploitationChallenge2",
       "difficulty": "Hard",
       "points":200
