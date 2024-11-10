@@ -41,28 +41,19 @@ const BufferOverflowChallenge = () => {
                     Can you overflow the buffer and reveal the hidden flag?
                 </Card.Text>
 
-                <Form onSubmit={handleSubmit} className="mt-4">
-                    <Form.Group className="mb-3" controlId="decryptedMessage">
-                        <Form.Label>Enter your input:</Form.Label>
-                        <Form.Control
-                            type="text"
-                            value={userInput}
-                            onChange={(e) => setUserInput(e.target.value)}
-                            placeholder="Type your decrypted message here"
-                        />
-                    </Form.Group>
-                    <div className="d-grid">
-                        <Button variant="primary" type="submit">
-                            Submit
-                        </Button>
-                    </div>
-                </Form>
+                <Card.Body>
+                    <Card.Text className="text-center mb-4">
+                        A critical program on your target system contains a buffer overflow vulnerability that could allow an attacker to get the code.
+                    </Card.Text>
 
-                {result && (
-                    <Alert variant="secondary" className="mt-4 text-center">
-                        {result}
-                    </Alert>
-                )}
+                    <div className="d-flex justify-content-center">
+                        <a href="..\..\Resources\BinaryExploitation1.7z" download="BinaryExploitation1.7z">
+                            <Button variant="primary" type="submit">
+                                download
+                            </Button>
+                        </a> 
+                    </div>
+                </Card.Body>
             </Card.Body>
         </Card>
     </Container>)
