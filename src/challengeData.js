@@ -6,7 +6,7 @@ const challengeData = {
       "description": "You've found references to a secret admin control panel. This panel likely holds the keys to all the stolen data. Your task is to find and exploit vulnerabilities in their access control system to reach this panel.",
       "hint": "The application doesn't seem to properly check authorization for all its pages. Try to find what might be accessible without proper permissions.",
       "flag": "CTF{IDOR_L34DS_T0_PR1V_3SC}",
-      "component": "WebExploitationChallenge2",
+      "component": "WebExploitationChallenge1", // Corrected component
       "difficulty": "Easy",
       "points": 100
     },
@@ -16,7 +16,7 @@ const challengeData = {
       "description": "The Phantom Collective has implemented a 'secure' admin portal with a custom sorting mechanism. Your task is to bypass their login system, defeat the two-step verification, and execute a payload on their server.",
       "hint": "Sometimes, the order of operations matters more than you think. And in two-step verification, the devil is in the details.",
       "flag": "CTF{SQLi_2FA_BYPASS_MASTER}",
-      "component": "WebExploitationChallenge3",
+      "component": "WebExploitationChallenge2", // Corrected component
       "difficulty": "Hard",
       "points": 300
     }
