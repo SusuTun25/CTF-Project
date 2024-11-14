@@ -30,17 +30,22 @@ Make sure you have the following installed on your system:
    git clone https://github.com/your-username/your-repo-name.git
 
 2. Install dependencies:
+
+    ```bash
     npm install
     # or
     yarn install
 
-Running the Project
-To start the development server, run the following command:
+### Running the Project
 
+1. To start the development server, run the following command:
+
+    ```bash
     npm start
     # or
     yarn start
 
+### Build for Production
 This will launch the website at http://localhost:3000 by default. Open this URL in your browser to view the app. Any saved changes you make to the source files will automatically reload the app.
 
 Project Structure
