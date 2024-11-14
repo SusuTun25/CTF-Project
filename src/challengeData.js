@@ -46,9 +46,9 @@ const challengeData = {
   "networkSecurity": [
     {
       "id": "net1",
-      "title": "Intercept the Secret",
-      "description": "Analyze this pcap file to find the hidden flag.",
-      "hint": "Look for unencrypted HTTP traffic.",
+      "title": "The Phantom's Shadows of the Wire",
+      "description": "Uncover the secrets hidden in this pcap file. A ghostly flag awaits those who dare to investigate.",
+      "hint": "Look for source.",
       "flag": "FLAG{NetworkTrafficSniffer}",
       "component": "NetworkSecurityChallenge1",
       "difficulty": "Easy",
@@ -56,8 +56,8 @@ const challengeData = {
     },
     {
       "id": "net2",
-      "title": "Password Hunter",
-      "description": "An attacker has attempted to brute-force login credentials by sending multiple requests with a mix of irrelevant data and incorrect passwords. Among the noise, the correct password was transmitted, but it’s hidden within a series of meaningless requests.",
+      "title": "Phantom's Secrets in the Storm",
+      "description": "Amid a flurry of false trails and decoy requests, an intruder’s true intent is buried. Search through the noise to uncover the hidden password, lurking among the shadows of failed attempts.",
       "hint": "Focus on the POST requests to find the password.",
       "flag": "FLAG{correct_password}",
       "component": "NetworkSecurityChallenge2",
@@ -90,20 +90,20 @@ const challengeData = {
   "binaryExploitation": [
     {
       "id": "bin1",
-      "title": "Buffer Overflow 101",
-      "description": "You’ve discovered a vulnerable program that seems to lack proper input validation.",
-      "hint": "The flag is in the format `FLAG{message}`, and the encoding is a common reversible technique. Start by decoding the base64 string and look for clues!",
-      "flag": "FLAG{BufferOverflowMaster}",
+      "title": "Phantom of Overflow",
+      "description": "A shadowy program holds a flaw in its defenses, vulnerable to those who know where to push. Unravel its weakness and let your inputs spill beyond the boundaries.",
+      "hint": "What might happen if you give it more than it can hold?",
+      "flag": "FLAG{BufferOverflowMaster2}",
       "component": "BinaryExploitationChallenge1",
       "difficulty": "Easy",
       "points":100
     },
     {
       "id": "bin2",
-      "title": "Stack Smash: Breaking the Barrier",
-      "description": "A critical program on your target system contains a buffer overflow vulnerability that could allow an attacker to execute arbitrary code or manipulate program control flow. Your mission is to exploit this vulnerability by crafting an input that overflows the buffer and hijacks the program’s execution to call a hidden function that reveals a secret flag.",
-      "hint": "The flag is in the format `FLAG{message}`, and the encoding is a common reversible technique. Start by decoding the base64 string and look for clues!",
-      "flag": "FLAG{BufferOverflowMaster}",
+      "title": "Shadows of Control",
+      "description": "A fragile boundary separates control from chaos. A single overflow can tilt the balance, redirecting execution to paths unseen.",
+      "hint": "Think about bypassing the call stack directly. ROP chains can give you power over execution by stitching together fragments of code already in memory. ",
+      "flag": "FLAG{ROP_Basic_Challenge}",
       "component": "BinaryExploitationChallenge2",
       "difficulty": "Hard",
       "points":200

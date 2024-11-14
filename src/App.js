@@ -43,7 +43,6 @@ const challengeComponents = {
   'net2':networkSecurityChallenge2
 };
 
-
 const App = () => {
   return (
     <Router>
